@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact List App</title>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Latest Angular.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!-- Controller for Angular -->
+    <script src="controllers/controller.js"></script>
+
+</head>
+<body>
+
+<div class ="container" ng-controller="AppCtrl">
+
+<h1>Contact List App</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Number</th>
+                <th>Action</th>
+
+
+
+            </tr>
+
+
+
+
+        </thead>
+
+        <tbody>
+        <tr>
+            <td><input class="form-control" ng-model ="contact.name"></td>
+            <td><input class="form-control" ng-model ="contact.email"></td>
+            <td><input class="form-control" ng-model ="contact.number"></td>
+            <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</td>
+
+
+        </tr>
+
+        <tr ng-repeat="contact in contactlist">
+
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.number}}</td>
+            <td><button class="btn btn-danger" ng-click="remove (contact._id)">Remove</td>
+
+
+
+        </tr>
+
+        </tbody>
+
+
+
+    </table>
+
+
+
+
+
+</div>
+</body>
+</html>
